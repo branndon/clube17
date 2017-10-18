@@ -20,6 +20,8 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 600;
 }
 
+show_admin_bar( false );
+
 /**
  * Odin Classes.
  */

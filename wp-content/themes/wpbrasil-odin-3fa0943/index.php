@@ -1,48 +1,50 @@
-<?php
-/**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme and one of the
- * two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * For example, it puts together the home page when no home.php file exists.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package Odin
- * @since 2.2.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+	<div class="about">
+		<div class="container">
+			<div class="col-sm-4 col-md-4">
+				<div class="about-container"></div>
+			</div>
+			<div class="col-sm-8 col-md-8">
+				<h2 class="tit-section">O Clube dos Macacos</h2>
+				<h3 class="tit">O Clube 17, também denominado Clube dos Macacos, nome originário do Rio dos Macacos</h3>
+				<p>O Clube 17, também denominado Clube dos Macacos, nome originário do rio dos Macacos que nasce na Floresta da Tijuca e banha os fundos da área do Clube, foi fundado em 22/09/64, por um grupo de engenheiros dirigentes da CEDAG – Companhia Estadual de Águas da Guanabara, com o objetivo de concentrar as equipes de manutenção e reparos emergenciais nesta Cidade.</p>
+				<a href="#"><span>></span> Mais informações</a>
+			</div>
+		</div>
+	</div>
 
-	<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
+	<div class="posts">
+		<div class="container">
+			<div class="box col-md-3">
+				<a href="#">
+					<span class="date">25.09.2017</span>
+					<p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet</p>
+				</a>
+			</div>
+			<div class="box col-md-3">
+				<a href="#">
+					<span class="date">25.09.2017</span>
+					<p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet</p>
+				</a>
+			</div>
+			<div class="box col-md-3">
+				<a href="#">
+					<span class="date">25.09.2017</span>
+					<p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet</p>
+				</a>
+			</div>
+			<div class="box col-md-3">
+				<a href="#">
+					<span class="date">25.09.2017</span>
+					<p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce imperdiet</p>
+				</a>
+			</div>
+		</div>
+	</div>
 
-			<?php
-				if ( have_posts() ) :
-					// Start the Loop.
-					while ( have_posts() ) : the_post();
 
-						/*
-						 * Include the post format-specific template for the content. If you want to
-						 * use this in a child theme, then include a file called called content-___.php
-						 * (where ___ is the post format) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
 
-					endwhile;
 
-					// Post navigation.
-					odin_paging_nav();
 
-				else :
-					// If no content, include the "No posts found" template.
-					get_template_part( 'content', 'none' );
-
-				endif;
-			?>
-
-	</main><!-- #content -->
-
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer();
