@@ -320,3 +320,38 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/functions.php';
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 }
+
+function lista_noticias(){
+    $args = array(
+        'posts_per_page'    => 4,
+        'post_type'         => 'post',
+        'category_name'		=> 'noticias',
+        'order'             => 'DESC'
+    );
+
+    $the_query = new WP_Query( $args );
+
+    if ( $the_query->have_posts() ) {
+            while ( $the_query->have_posts() ) {
+                $the_query->the_post();
+
+					echo '<div class="box col-md-3" style="background:url('.get_the_post_thumbnail_url(get_the_ID(), "list").')">';
+					echo '<a href="'. get_the_permalink(get_the_ID()) .'" class="linkPost">';
+						echo '<div class="hover">';
+							echo '<span></span>';
+						echo '</div>';
+						echo '<a>';
+							the_date('d.m.Y', '<span class="date">', '</span>');
+							echo '<p class="desc">' . get_the_title(get_the_ID()) . '</p>';
+						echo '</a>';
+						echo '</a>';
+					echo '</div>';
+            }
+    } else {
+        echo '<center>Nenhuma noticia encontrada.</center>';
+    }
+    
+    wp_reset_postdata();
+}
+
+

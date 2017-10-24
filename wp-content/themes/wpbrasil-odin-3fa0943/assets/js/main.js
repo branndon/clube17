@@ -1,21 +1,18 @@
-jQuery(document).ready(function($) {
-	// fitVids.
-	$( '.entry-content' ).fitVids();
+jQuery(document).ready(function($) {});
 
-	// Responsive wp_video_shortcode().
-	$( '.wp-video-shortcode' ).parent( 'div' ).css( 'width', 'auto' );
+// Maps
+function initMap() {
+	var myLatLng = {lat: -22.967213, lng: -43.23930};
 
-	/**
-	 * Odin Core shortcodes
-	 */
-
-	// Tabs.
-	$( '.odin-tabs a' ).click(function(e) {
-		e.preventDefault();
-		$(this).tab( 'show' );
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 16,
+		center: myLatLng,
+		mapTypeControl: false
 	});
 
-	// Tooltip.
-	$( '.odin-tooltip' ).tooltip();
-
-});
+	var marker = new google.maps.Marker({
+		position: myLatLng,
+		map: map,
+		title: 'Hello World!'
+	});
+}

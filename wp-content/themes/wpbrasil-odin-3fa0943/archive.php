@@ -1,59 +1,45 @@
-<?php
-/**
- * The template for displaying Archive pages.
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each specific one. For example, Twenty Thirteen
- * already has tag.php for Tag archives, category.php for Category archives,
- * and author.php for Author archives.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package Odin
- * @since 2.2.0
- */
+<?php get_header(); ?>
+	
+	<div class="_header-pages">
+		<div class="container">
+			<?php get_template_part('breadcrumb'); ?>
+			<h1><?php echo post_type_archive_title(); ?></h1>
+		</div>
+	</div>
 
-get_header(); ?>
+	<main class="content">
+		<div class="container">
+			<div class="_posts">
+				<div class="container">
+					<?php if ( have_posts() ) : ?>
+						<?php while ( have_posts() ) : the_post(); ?>
+							<div class="box col-md-4">
+								<a href="<?php the_permalink(); ?>" class="linkImg">
+									<?php if ( has_post_thumbnail() ) : ?>
+										<div class="imgPost" style="background: url(<?php the_post_thumbnail_url(); ?>) top center no-repeat; background-size: cover;"></div>
+									<?php else : ?>
+										<div class="imgPost"></div>
+									<?php endif; ?>
+								</a>
 
-	<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
+								<h2 class="tit"><?php echo get_the_title(); ?></h2>
 
-			<?php if ( have_posts() ) : ?>
+								<?php if (get_the_content()) : ?>
+									<p class="desc"><?php echo mb_strimwidth(get_the_content(), 0, 120, '...'); ?></p>
+								<?php else : ?>
+									<p class="desc">Nenhuma descrição encontrada.</p>
+								<?php endif; ?>
 
-				<header class="page-header">
-					<?php
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						the_archive_description( '<div class="taxonomy-description">', '</div>' );
-					?>
-				</header><!-- .page-header -->
+								<a href="<?php the_permalink(); ?>">Mais informações</a>
+							</div>
+						<?php endwhile; ?>
+					<?php else : ?>
+						<p class="center">Nenhum post encontrado.</p>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
 
-				<?php
-					// Start the Loop.
-					while ( have_posts() ) : the_post();
-
-						/*
-						 * Include the post format-specific template for the content. If you want to
-						 * use this in a child theme, then include a file called called content-___.php
-						 * (where ___ is the post format) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
-
-					endwhile;
-
-					// Page navigation.
-					odin_paging_nav();
-
-				else :
-					// If no content, include the "No posts found" template.
-					get_template_part( 'content', 'none' );
-
-				endif;
-			?>
-
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+		<div class="clear"></div>
+	</main>
+<?php get_footer(); ?>

@@ -1,34 +1,31 @@
-<?php
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that other
- * 'pages' on your WordPress site will use a different template.
- *
- * @package Odin
- * @since 2.2.0
- */
+<?php get_header(); ?>
+	
+	<div class="_header-pages">
+		<div class="container">
+			<?php get_template_part('breadcrumb'); ?>
+			<h1><?php echo get_the_title(); ?></h1>
+		</div>
+	</div>
 
-get_header(); ?>
-
-	<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
-
+	<main class="content">
+		<div class="container">
 			<?php
-				// Start the Loop.
-				while ( have_posts() ) : the_post();
-
-					// Include the page content template.
-					get_template_part( 'content', 'page' );
-
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				endwhile;
+				while ( have_posts() ) { 
+					the_post();
+					the_content();
+				}
 			?>
 
-	</main><!-- #main -->
+			<div class="clear"></div>
 
-<?php
-get_footer();
+			<?php if ( is_page('sobre') ) : ?>
+				<center>
+					<div class="link-locacoes">
+						<a href="<?php bloginfo( 'siteurl' ); ?>/locacoes">Locações <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+						<a href="<?php bloginfo( 'siteurl' ); ?>/atividades" class="active">Atividades <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					</div>
+				</center>
+			<?php endif; ?>
+		</div>
+	</main>
+<?php get_footer(); ?>

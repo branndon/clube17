@@ -8,19 +8,20 @@
 
 get_header(); ?>
 
+	<div class="_header-pages">
+		<div class="container">
+			<?php get_template_part('breadcrumb'); ?>
+			<h1>Notícias</h1>
+		</div>
+	</div>
+
 	<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
+		<div class="page-content">
+			<h2>404</h2>
+			<p>Página não encontrada!</p>
+		</div>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php _e( 'Not Found', 'odin' ); ?></h1>
-			</header>
+		<a href="<?php bloginfo( 'siteurl' ); ?>" class="link-def">Voltar ao início</a>
+	</main>
 
-			<div class="page-content">
-				<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'odin' ); ?></p>
-
-				<?php get_search_form(); ?>
-			</div><!-- .page-content -->
-
-	</main><!-- #main -->
-
-<?php
-get_footer();
+<?php get_footer(); ?>

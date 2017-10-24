@@ -1,0 +1,1037 @@
+@color_1: #00483f;
+@color_2: #6fae24;
+@color_3: #4c4c4c;
+@font_family_1: 'Playfair Display', serif;
+@font_family_2: 'Open Sans', sans-serif;
+
+/*
+	-* Default *-
+*/
+body{
+	margin-bottom: 0 !important;
+	font-family: @font_family_2;
+	font-weight: 300;
+}
+
+.tit-border {
+	color: @color_1;
+	font-size: 33px;
+	font-family: @font_family_1;
+	position: relative;
+	margin-bottom: 40px;
+	&:after {
+		content: ' ';
+		display: block;
+		width: 6%;
+		height: 3px;
+		background: @color_2;
+		position: absolute;
+		bottom: -20px;
+		left: 0;
+	}
+}
+.clear{
+	clear: both;
+}
+.center{
+	text-align: center;
+}
+
+.link-def{
+	display: inline-block;
+	border: 1px solid #999999;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #999999;
+	font-family: @font_family_2;
+	padding: 10px 20px;
+	font-weight: bold;
+
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+/* Breadcrumb */
+.breadcrumbs{
+	color: white;
+	margin: 0px 0 40px 0;
+	a{
+		span{
+			color: @color_2;
+			text-decoration: underline;
+		}
+	}
+}
+
+/*
+	-* Header *-
+*/
+header {
+	padding: 40px 0;
+	img {
+		max-height: 140px;
+	}
+	nav {
+		ul {
+			list-style: none;
+			li {
+				float: left;
+				margin: 60px 20px;
+				a {
+					text-decoration: none;
+					padding: 0 10px;
+					display: block;
+					font-size: 18px;
+					color: @color_1;
+					font-family: @font_family_1;
+					position: relative;
+					&:before {
+						content: ' ';
+						background: url(../../themes/wpbrasil-odin-3fa0943/assets/images/ico-octagon.png) top center no-repeat;
+						background-size: cover;
+						width: 12px;
+						height: 12px;
+						display: block;
+						position: absolute;
+						left: -15px;
+						top: 0;
+						bottom: 0;
+						margin-top: auto;
+						margin-bottom: auto;
+						font-size: 10px;
+						color: @color_2;
+					}
+					&:hover{
+						text-decoration: none;
+						color: @color_2;
+					}
+				}
+				&.current-menu-item{
+					a{
+						color: @color_2;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*
+	-* Slider *-
+*/
+#slider {
+	width: 100%;
+	height: 400px;
+	background: url(../../themes/wpbrasil-odin-3fa0943/assets/images/bg-slider.jpg) top center no-repeat;
+	background-size: cover;
+	position: relative;
+
+	.main{
+		display: none;
+		background: #00362b;
+		width: 600px;
+		height: 110%;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -20px;
+		margin: auto;
+	}
+}
+
+/*
+	-* Sobre *-
+*/
+._about {
+	padding: 100px 0;
+	.about-container {
+		width: 100%;
+		height: 400px;
+		background: url(../../themes/wpbrasil-odin-3fa0943/assets/images/sobre.jpg) top center no-repeat;
+		background-size: cover;
+		position: relative;
+		&:after {
+			content: ' ';
+			display: block;
+			width: 100%;
+			height: 400px;
+			background: url(../../themes/wpbrasil-odin-3fa0943/assets/images/bg-sobre.jpg) top center no-repeat;
+			background-size: cover;
+			position: absolute;
+			left: -30px;
+			top: -30px;
+			z-index: -999999;
+		}
+	}
+	.tit-section {
+		font-weight: 900;
+		color: @color_2;
+		text-transform: uppercase;
+		font-size: 17px;
+		font-family: @font_family_2;
+		margin-top: 0;
+		margin-bottom: 80px;
+	}
+	.tit {
+		color: @color_1;
+		font-size: 33px;
+		font-family: @font_family_1;
+		position: relative;
+		&:before {
+			content: ' ';
+			display: block;
+			width: 6%;
+			height: 3px;
+			background: @color_2;
+			position: absolute;
+			top: -20px;
+			left: 0;
+		}
+	}
+	p {
+		font-size: 16px;
+		font-family: @font_family_2;
+		color: @color_3;
+		line-height: 30px;
+		margin: 40px 0;
+	}
+	a {
+		color: @color_2;
+		font-size: 16px;
+		font-weight: bold;
+		font-family: @font_family_2;
+		&:hover {
+			text-decoration: none;
+		}
+		span {
+			display: inline-block;
+			margin-right: 20px;
+		}
+	}
+}
+
+/*
+	-* Últimos posts *-
+*/
+._posts {
+	.box {
+		min-height: 380px;
+		background: url(../../themes/wpbrasil-odin-3fa0943/assets/images/sobre.jpg) top center no-repeat;
+		background-size: cover;
+		position: relative;
+		padding: 30px;
+		border-right: 1px solid white;
+		border-bottom: 1px solid white;
+
+		&:after {
+			content: ' ';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.4);
+		}
+		&:hover{
+			.hover{
+				display: flex;
+			}
+		}
+
+		.linkPost{
+			position: initial;
+		}
+		.hover{
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: rgba(111,174,36,0.4);
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+
+			span{
+				background: url(../../themes/wpbrasil-odin-3fa0943/assets/images/hover-noticias.png) top center repeat;
+				background-size: cover;
+				width: 60px;
+				height: 60px;
+			}
+		}
+		a {
+			position: absolute;
+			display: block;
+			padding: 20px;
+			bottom: 0;
+			left: 0;
+			color: @color_2;
+			z-index: 1;
+
+			&:hover{
+				text-decoration: none;
+			}
+			p {
+				font-size: 18px;
+				line-height: 25px;
+				color: white;
+			}
+			span {
+				font-weight: bold;
+				font-size: 16px;
+				line-height: 30px;
+			}
+		}
+	}
+}
+
+/*
+	-* Enquetes *-
+*/
+._enquete{
+	background: #ededed;
+	padding: 90px 0;	
+	margin-top: 90px;
+
+	.container{
+		background: white;
+		padding: 60px;
+		box-shadow: 0px 0px 40px rgba(50, 50, 50, 0.75);
+		max-width: 60%;
+		position: relative;
+		min-height: 250px;
+
+		.btns{
+			position: absolute;
+			bottom: -40px;
+			background: white;
+			margin: 0 auto;
+			border: 1px solid #cac7c7;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+			width: fit-content;
+
+			a{
+				display: block;
+				float: left;
+				padding: 25px;
+				font-size: 25px;
+				color: #00483f;
+				font-family: @font_family_1;
+
+				i{
+					border: 1px solid #175b42;
+					padding: 3px 11px;
+					border-radius: 50%;
+					color: #175b42;
+					/*border-color: -webkit-linear-gradient(#175b42, #82b454);*/
+					/*border-color: -o-linear-gradient(#175b42, #82b454);*/
+					/*border-color: -moz-linear-gradient(#175b42, #82b454);*/
+					/*border-color: linear-gradient(#175b42, #82b454);*/
+					margin-left: 30px;
+				}
+
+				&:hover{
+					background: @color_2;
+					color: white;
+					text-decoration: none;
+
+					i{
+						color: white;
+						border-color: white;
+					}
+				}
+			}
+			.active{
+				background: @color_2;
+				color: white;
+				text-decoration: none;
+
+				i{
+					color: white;
+					border-color: white;
+				}
+			}
+		}
+	}
+}
+
+
+/*
+	-* Dúvidas *-
+*/
+._duvidas{
+	width: 100%;
+	background: url(../../themes/wpbrasil-odin-3fa0943/assets/images/bg-duvidas.png) top center repeat;
+	background-size: cover;
+	padding: 25px 0;
+
+	.container{
+		max-width: 690px;
+	}
+	.tit-border{
+		text-align: center;
+		font-size: 17px;
+		font-family: @font_family_2;
+		color: @color_2;
+		text-transform: uppercase;
+		font-weight: bold;
+
+		&:after{
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	.desc{
+		text-align: center;
+		font-size: 33px;
+		color: @color_1;
+		font-family: @font_family_1;
+		margin-bottom: 30px;
+	}
+
+	.col-md-6{
+		font-size: 13px;
+		color: @color_2;
+		font-family: @font_family_2;
+
+		i{
+			float: left;
+			font-size: 30px;
+			margin-top: 15px;
+		}
+		p{
+			text-transform: uppercase;
+			position: relative;
+			margin-left: 65px;
+
+			&:before{
+				content: ' ';
+				width: 1px;
+				height: 100%;
+				position: absolute;
+				left: -20px;
+				top: 0;
+				bottom: 0;
+				margin-top: auto;
+				margin-bottom: auto;
+				display: block;
+				background: #e5e6e5;
+			}
+		}
+		a{
+			text-transform: initial;
+			color: @color_1;
+			font-size: 28px;
+			font-weight: bold;
+
+			&:hover{
+				text-decoration: none;
+				color: @color_2;
+			}
+		}
+	}
+}
+
+/*
+	-* Mapa *-
+*/
+._mapa{
+	height: 420px;
+	position: relative;
+
+	.localizacao{
+		position: absolute;
+		top: 30px;
+		left: 30px;
+		z-index: 9999;
+		background: rgba(255,255,255,0.8);
+		padding: 20px 30px;
+		text-align: center;
+		font-family: @font_family_2;
+		color: @color_2;
+		font-size: 13px;
+
+		p{
+			font-size: 24px;
+			color: @color_1;
+			font-weight: bold;
+			font-size: 20px;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		i{
+			font-size: 20px;
+			color: @color_2;
+		}
+		h3{
+			text-transform: uppercase;
+			font-size: 13px;
+			margin-top: 0;
+			font-weight: 100;
+		}
+	}
+	#map{
+		height: 100%;
+		width: 100%;
+	}
+}
+
+
+/*
+	*- Footer -*
+*/
+footer{
+	width: 100%;
+	background: url(../../themes/wpbrasil-odin-3fa0943/assets/images/bg-footer.jpg) top center repeat;
+	background-size: cover;
+	padding: 25px 0;
+	color: #ffffff;
+	display: inline-block;
+	height: initial !important;
+	position: relative!important;
+
+	.container{
+		&:before{
+			content: ' ';
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			margin-left: auto;
+			margin-right: auto;
+			width: 20%;
+			height: 20px;
+			background: rgba(0, 72, 63, 0.7);
+		}
+	}
+
+	.copy{
+		width: 100%;
+		border-bottom: 1px solid #224c3f;
+		padding: 20px 0;
+		color: #999999;
+		position: relative;
+
+		&:before{
+			content: '♦';
+			display: block;
+			position: absolute;
+			left: -25px;
+			bottom: -19px;
+			color: #1d4938;
+			font-size: 30px;
+		}
+		&:after{
+			content: '♦';
+			display: block;
+			position: absolute;
+			right: -25px;
+			bottom: -19px;
+			color: #1d4938;
+			font-size: 30px;
+		}
+	}
+
+	nav {
+		display: inline-block;
+
+		ul {
+			list-style: none;
+			li {
+				float: left;
+				margin: 20px;
+				a {
+					text-decoration: none;
+					padding: 0 10px;
+					display: block;
+					font-size: 18px;
+					color: white;
+					font-family: @font_family_1;
+					position: relative;
+					&:before {
+						content: ' ';
+						background: url(../../themes/wpbrasil-odin-3fa0943/assets/images/ico-octagon.png) top center no-repeat;
+						background-size: cover;
+						width: 12px;
+						height: 12px;
+						display: block;
+						position: absolute;
+						left: -25px;
+						top: 0;
+						bottom: 0;
+						margin-top: auto;
+						margin-bottom: auto;
+						font-size: 10px;
+						color: @color_2;
+					}
+					&:hover{
+						text-decoration: none;
+						color: @color_2;
+					}
+				}
+			}
+		}
+	}
+
+	.logo-empresa{
+		img{
+		}
+	}
+}
+
+/*
+	-* Header pages *-
+*/
+._header-pages{
+	width: 100%;
+	background: url(../../themes/wpbrasil-odin-3fa0943/assets/images/bg-tit-pages.jpg) top center no-repeat;
+	background-size: cover;
+	display: inline-block;
+	padding-bottom: 40px;
+
+	.container{
+		position: relative;
+		padding-top: 40px;
+
+		&:before{
+			content: ' ';
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			height: 20px;
+			background: rgba(0, 68, 59, 0.75);
+		}
+
+		h1{
+			color: white;
+			text-align: center;
+			font-family: @font_family_1;
+			font-size: 28px;
+			margin-top: 0;
+		}
+	}
+}
+
+/*
+	*- Content 404 *-
+*/
+body.error404 #content{
+	text-align: center;
+	font-family: @font_family_1;
+	padding-bottom: 60px;
+
+	p{
+		color: @color_2;
+		font-size: 30px;
+	}
+	h2{
+		color: @color_1;
+		font-size: 130px;
+	}
+	.link-def{
+		margin-top: 50px;
+	}
+}
+
+
+/*
+	*- Main content *-
+*/
+main.content{
+	padding: 100px 0;
+
+	.link-def{
+		margin-top: 50px;
+	}
+
+	img{
+		max-width: 100%;
+		height: auto;
+	}
+
+	p{
+		font-family: @font_family_2;
+		color: #4c4c4c;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 30px;
+		margin: 0;
+		margin-top: 30px;
+	}
+}
+
+.page-template-default{
+	main.content{
+		.container{
+			max-width: 890px;
+		}
+	}
+}
+
+
+/*
+	*- Diretoria *-
+*/
+._integrantes{
+	font-family: @font_family_1;
+	color: @color_1;
+
+	.box{
+		padding: 20px;
+		border: 1px solid #e6e6e6;
+		margin-top: 20px;
+		display: inline-block;
+		width: 100%;
+
+		&:first-child{
+			margin-top: 0;
+		}
+
+		i{
+			float: left;
+			color: @color_2;
+			font-size: 22px;
+			border-right: 1px solid #e6e6e6;
+			margin-right: 10px;
+			padding-right: 15px;
+		}
+		p{
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+/*
+	*- locações *-
+*/
+.link-locacoes{
+	background: white;
+	margin: 0 auto;
+	border: 1px solid #cac7c7;
+	display: inline-block;
+	width: 100%;
+	margin-top: 50px;
+
+	a{
+		display: block;
+		float: left;
+		padding: 25px;
+		font-size: 25px;
+		color: #00483f;
+		font-family: @font_family_1;
+		width: 50%;
+
+		i{
+			border: 1px solid #175b42;
+			padding: 3px 11px;
+			border-radius: 50%;
+			color: #175b42;
+			/*border-color: -webkit-linear-gradient(#175b42, #82b454);*/
+			/*border-color: -o-linear-gradient(#175b42, #82b454);*/
+			/*border-color: -moz-linear-gradient(#175b42, #82b454);*/
+			/*border-color: linear-gradient(#175b42, #82b454);*/
+			margin-left: 30px;
+		}
+
+		&:hover{
+			background: @color_2;
+			color: white;
+			text-decoration: none;
+
+			i{
+				color: white;
+				border-color: white;
+			}
+		}
+	}
+	.active{
+		background: @color_2;
+		color: white;
+		text-decoration: none;
+
+		i{
+			color: white;
+			border-color: white;
+		}
+	}
+}
+
+/*
+	*- Form -*
+*/
+form{
+	label{
+		font-family: @font_family_2;
+		font-weight: 300;
+
+		span{
+			color: @color_2;
+			font-style: italic;
+		}
+	}
+	input, textarea{
+		border-radius: 0!important;
+		border: 1px solid #d9d9d9!important;
+	}
+
+	textarea{
+		min-height: 120px;
+		resize: none;
+	}
+
+	button[type='submit']{
+		background: @color_2;
+		border-radius: 0;
+		border: 0;
+		padding: 10px 20px;
+		float: right;
+		text-transform: uppercase;
+	}
+
+	.form-group{
+		padding: 0!important;
+	}
+
+	.col-md-4.padding{
+		padding: 0 15px!important;
+	}
+}
+
+/*
+	*- Contato -*
+*/
+.page-template-page-template-contato{
+	.content{
+		.container{
+			h2{
+				font-family: @font_family_1;
+				color: @color_2;
+				font-size: 20px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+
+/*
+	Locações
+*/
+.archive{
+	._posts {
+
+		.box {
+			background: none;
+			position: relative;
+			padding: 10px;
+
+			&:after {
+				display: none;
+			}
+
+			img{
+				width: 100%;
+				min-height: 250px;
+				height: auto;
+			}
+
+			p {
+				font-size: 16px;
+				line-height: 25px;
+				color: #4c4c4c;
+				margin-top: 10px;
+			}
+			span {
+				font-weight: bold;
+				font-size: 16px;
+				line-height: 30px;
+			}
+			.tit{
+				font-size: 25px;
+				color: #00483f;
+				font-family: @font_family_1;
+			}
+
+			a {
+				display: inline-block;
+				color: @color_2;
+				position: initial;
+				padding: 0;
+				margin-top: 10px;
+				font-weight: bold;
+
+				&:hover{
+					text-decoration: none;
+				}
+				&:before{
+					content: '>';
+					display: block;
+					margin-right: 10px;
+					float: left;
+				}
+			}
+		}
+
+		.notFound{
+			width: 100%;
+			height: 250px;
+			display: block;
+			border: 1px solid #e5e6e5;
+		}
+
+		.linkImg{
+			width: 100%;
+			margin-top: 0;
+
+			&:before{
+				display: none!important;
+			}
+		}
+		.imgPost{
+			width: 100%;
+			height: 250px;
+			background-color: #ddd;
+		}
+	}
+}
+
+/*
+	Single
+*/
+.single-post{
+	.content{
+		p{
+			margin-top: 20px;
+		}
+		.date{
+			color: @color_2;
+			font-size: 16px;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 0;
+		}
+		h1{
+			font-size: 30px;
+			line-height: 45px;
+			color: #00483f;
+			text-align: center;
+		}
+
+		.footer-btns{
+			display: inline-block;
+			width: 100%;
+			height: 100px;
+			border-top: 1px solid #e5e6e7;
+			margin-top: 40px;
+
+			a{
+				display: inline-block;
+				float: left;
+				padding: 10px 20px;
+				text-transform: uppercase;
+				border: 2px solid #e6e6e6;
+				color: #999999;
+				margin-top: 15px;
+
+				i{
+					margin-right: 5px;
+				}
+
+				&:hover{
+					background: #e6e6e6;
+					color: white;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+/*
+	Single: locações
+*/
+.single-locacoes{
+	.content{
+		padding: 70px 0;
+
+		p{
+			margin: 0;
+		}
+		h2{
+			border-bottom: 1px solid #e5e6e5;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			font-size: 20px;
+			color: #4c4c4c;
+			font-family: @font_family_1;
+		}
+
+		img{
+			max-width: 100%;
+			height: auto;
+			margin-top: 50px;
+		}
+
+		.main-content{
+			padding: 0 50px;
+
+		}
+	}
+}
+
+.single-atividades{
+	.content{
+		.atividades-list{
+			width: 100%;
+			text-align: center;
+			display: inline-block;
+			margin: 40px 0 0;
+			margin-left: 25%;
+			max-width: 50%;
+
+			.lineR{
+				border: 1px solid #e5e6e5;
+				display: block;
+				padding: 10px;
+			}
+		}
+		.duracaoAula{
+			color: @color_2;
+			font-size: 16px;
+			text-align: center;
+			margin-top: 5px;
+			margin-bottom: 20px;
+			line-height: 20px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

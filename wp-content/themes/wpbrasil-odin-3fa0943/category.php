@@ -1,50 +1,42 @@
-<?php
-/**
- * The template for displaying Category pages.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package Odin
- * @since 2.2.0
- */
+<?php get_header(); ?>
+	
+	<div class="_header-pages">
+		<div class="container">
+			<?php get_template_part('breadcrumb'); ?>
+			<h1><?php echo get_cat_name($wp_query->get_queried_object_id()); ?></h1>
+		</div>
+	</div>
 
-get_header(); ?>
+	<main class="content">
+		<div class="container">
+			<div class="_posts">
+				<div class="container">
 
-	<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
+					<?php if ( have_posts() ) : ?>
+						<?php while ( have_posts() ) : the_post(); ?>
+							<div class="box col-md-3" style="background:url(<?php  echo get_the_post_thumbnail_url(get_the_ID(), "list");?>" >
+								<a href="<?php the_permalink(); ?>" class="linkPost">
+									<div class="hover" href="<?php the_permalink(); ?>">
+										<span></span>
+									</div>
+									<a href="<?php the_permalink(); ?>">
+										<?php the_date('d.m.Y', '<span class="date">', '</span>'); ?>
+										<p class="desc"><?php echo get_the_title(); ?></p>
+									</a>
+								</a>
+							</div>
+						<?php endwhile; ?>
+					<?php else : ?>
+						<p class="center">Nenhum post encontrado.</p>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
 
-			<?php if ( have_posts() ) : ?>
+		<div class="clear"></div>
 
-				<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-				</header><!-- .page-header -->
-
-				<?php
-						// Start the Loop.
-						while ( have_posts() ) : the_post();
-
-						/*
-						 * Include the post format-specific template for the content. If you want to
-						 * use this in a child theme, then include a file called called content-___.php
-						 * (where ___ is the post format) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
-
-						endwhile;
-
-						// Page navigation.
-						odin_paging_nav();
-
-					else :
-						// If no content, include the "No posts found" template.
-						get_template_part( 'content', 'none' );
-
-				endif;
-			?>
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+		<center>
+			<a href="#" class="link-def">Mais notícias</a>
+		</center>
+	</main>
+<?php get_footer(); ?>
