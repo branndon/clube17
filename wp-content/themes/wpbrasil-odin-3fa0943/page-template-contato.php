@@ -40,11 +40,19 @@ get_header();
 					</div>
 					<div class="form-group col-md-4 col-sm-4 padding">
 						<label for="email">Setor do Clube <span>(obrigatório)</span></label>
-						<input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="">
+						<select class="form-control">
+							<option>Selecione</option>
+							<option>Setor 1</option>
+							<option>Setor 2</option>
+						</select>
 					</div>
 					<div class="form-group col-md-4 col-sm-4">
 						<label for="email">Assunto <span>(obrigatório)</span></label>
-						<input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="">
+						<select class="form-control">
+							<option>Selecione</option>
+							<option>Assunto 1</option>
+							<option>Assunto 2</option>
+						</select>
 					</div>
 
 					<div class="form-group">
@@ -59,6 +67,24 @@ get_header();
 			<div class="col-md-5">
 				<h2>Informações de contato</h2>
 				<p>Caso prefira, utilize qualquer um dos números abaixo:</p>
+
+				<div class="sobre">
+					<div class="group">
+						<div class="infos">
+							<i class="fa fa-phone" aria-hidden="true"></i>
+							<span>Secretaria / Eventos / Cobrança</span><br/>
+							(21) 2274-1429<br/>
+							(21) 3875-5986<br/>
+							(21) 3875-6034<br/>
+							(21) 3081-4078
+						</div>
+						<div class="infos">
+							<i class="fa fa-envelope-o" aria-hidden="true"></i>
+							<span>Envie um e-mail</span><br/>
+							<a href="mailto:contato@clube17.com.br" target="_blank">contato@clube17.com.br</a>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<?php

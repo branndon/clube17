@@ -26,6 +26,11 @@
 
 				<div class="footer-btns">
 					<a href="<?php bloginfo( 'siteurl' ); ?>/noticias"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a>
+					<div class="share">
+						<a>Compartilhe:</a>
+						<a href="https://www.facebook.com/sharer/sharer.php?u=<?= get_the_permalink(); ?>" target="_new" class="facebook">Facebook</a>
+						<a href="whatsapp://send?text=<?= get_the_title(); echo ' - ' . get_the_permalink(); ?>" target="_new" class="whatsApp"></a>
+					</div>
 				</div>
 			</div>
 		</main>

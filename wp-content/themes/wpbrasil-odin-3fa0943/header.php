@@ -20,6 +20,10 @@
 	<!-- font-awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	<!-- Swipper -->
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/swiper.min.css">
+	<script src="<?php echo get_template_directory_uri(); ?>/js/swiper.min.js"></script>
+
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	
@@ -46,24 +50,51 @@
 	<!-- header -->
 	<header id="header" role="banner">
 		<div class="container">
-			<div class="col-md-2">
-				<a href="<?php bloginfo( 'siteurl' ); ?>">
+			<div class="col-xs-2 col-sm-2 col-md-2">
+				<a href="<?php bloginfo( 'siteurl' ); ?>" class="logoLink">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" />
 				</a>
 			</div>
-			<div class="col-md-10">
-				<nav>
-					<ul>
-					<?php 
-						$menuParameters = array(
-							'menu'				=> 'menu-header',
-							'container'       	=> false,
-							'echo'            	=> false,
-							'depth'           	=> 0,
-						);
-						echo strip_tags(wp_nav_menu( $menuParameters ), '<li><a>' );
-					?>
-					</ul>
+			<div class="col-xs-10 col-sm-10 col-md-10">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<?php 
+							$defaults = array(
+								'menu'            => 'menu-header',
+								'container'       => 'div',
+								'container_class' => 'collapse navbar-collapse',
+								'container_id'    => 'bs-example-navbar-collapse-1',
+								'menu_class'      => 'menu',
+								'menu_id'         => '',
+								'echo'            => true,
+								'fallback_cb'     => 'wp_page_menu',
+								'before'          => '',
+								'after'           => '',
+								'link_before'     => '',
+								'link_after'      => '',
+								'items_wrap'      => '<ul id=\"%1$s\" class=\"%2$s\">%3$s</ul>',
+								'depth'           => 0,
+								'walker'          => ''
+							);
+							$menuParameters = array(
+								'menu'				=> 'menu-header',
+								'container'       	=> false,
+								'echo'            	=> false,
+								'depth'           	=> 0,
+							);
+							
+							// callmenu
+							wp_nav_menu($defaults);
+						?>
+					</div>
 				</nav>
 			</div>
 		</div>
@@ -72,7 +103,17 @@
 	<!-- Slider -->
 	<?php if (is_home()) : ?>
 		<div id="slider">
-			<div class="main"></div>
+			<div class="main">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"></div>
+						<div class="swiper-slide"></div>
+						<div class="swiper-slide"></div>
+					</div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
 		</div>
 	<?php endif; ?>
 

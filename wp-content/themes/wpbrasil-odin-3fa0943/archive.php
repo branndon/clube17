@@ -25,7 +25,7 @@
 								<h2 class="tit"><?php echo get_the_title(); ?></h2>
 
 								<?php if (get_the_content()) : ?>
-									<p class="desc"><?php echo mb_strimwidth(get_the_content(), 0, 120, '...'); ?></p>
+									<p class="desc"><?php echo wp_strip_all_tags( mb_strimwidth(get_the_content(), 0, 140, '...') ); ?></p>
 								<?php else : ?>
 									<p class="desc">Nenhuma descrição encontrada.</p>
 								<?php endif; ?>

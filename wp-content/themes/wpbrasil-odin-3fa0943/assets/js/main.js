@@ -1,6 +1,20 @@
-jQuery(document).ready(function($) {});
+jQuery(document).ready(function($) {
+	/**
+	 * Swipper: Main slider 
+	 * */
+	var produtos = new Swiper('.swiper-container', {
+		slidesPerView: 1,
+		paginationClickable: true,
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+		spaceBetween: 30,
+		loop: true
+	});
+});
 
-// Maps
+/**
+ * Maps
+ * */
 function initMap() {
 	var myLatLng = {lat: -22.967213, lng: -43.23930};
 
